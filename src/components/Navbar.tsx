@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Playfair_Display } from "next/font/google";
 
 const playfair = Playfair_Display({
@@ -18,18 +18,38 @@ const navLinks = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent | TouchEvent) => {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("touchstart", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
+    };
+  }, []);
 
   return (
     <header className="absolute inset-x-0 top-0 z-30">
-      <div className="flex items-start justify-between px-8 py-7 md:px-12 lg:px-16">
+      <div className="flex items-start justify-between px-5 py-5 sm:px-8 md:px-12 lg:px-16">
         <Link
           href="/"
-          className={`${playfair.className} -ml-1 text-3xl italic tracking-[0.22em] text-white`}
+          className={`${playfair.className} text-3xl italic tracking-[0.22em] text-white`}
         >
-          kz.
+          kz
         </Link>
 
-        <div className="relative">
+        <div ref={menuRef} className="relative">
           <button
             onClick={() => setIsOpen((prev) => !prev)}
             aria-label="Open menu"
@@ -54,7 +74,7 @@ export default function Navbar() {
           </button>
 
           <nav
-            className={`absolute right-0 top-14 w-52 overflow-hidden rounded-2xl border border-white/15 bg-black/15 backdrop-blur-md transition-all duration-300 ease-out ${
+            className={`absolute right-0 top-14 w-52 overflow-hidden rounded-2xl border border-white/15 bg-black/20 backdrop-blur-md transition-all duration-300 ease-out ${
               isOpen
                 ? "visible translate-y-0 opacity-100"
                 : "invisible -translate-y-2 opacity-0"

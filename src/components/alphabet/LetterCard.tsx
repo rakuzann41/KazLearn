@@ -26,13 +26,7 @@ export default function LetterCard({ letter }: LetterCardProps) {
       }`}
     >
       {/* Орнамент слева */}
-      <div className="absolute inset-y-5 left-4 z-20 flex w-5 flex-col items-center justify-center gap-2 opacity-55">
-        <span className="text-lg text-[#9a6736]">◇</span>
-        <span className="text-lg text-[#9a6736]">◆</span>
-        <span className="text-lg text-[#9a6736]">◇</span>
-        <span className="text-lg text-[#9a6736]">◆</span>
-        <span className="text-lg text-[#9a6736]">◇</span>
-      </div>
+ 
 
       {/* Фоновая картинка или базовый ою */}
       <div className="absolute inset-0">
@@ -84,12 +78,7 @@ export default function LetterCard({ letter }: LetterCardProps) {
         тыңдау
       </div>
 
-      {/* Метка особой казахской буквы */}
-      {letter.special && (
-        <div className="absolute right-4 top-4 z-20 rounded-full border border-[#9a6736]/25 bg-[#9a6736]/10 px-2.5 py-1 text-[10px] font-medium uppercase tracking-wide text-[#7a4f29]">
-          қазақ әрпі
-        </div>
-      )}
+  
     </button>
   );
 }
