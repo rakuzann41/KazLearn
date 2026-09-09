@@ -1,3 +1,9 @@
+export type Rule = {
+  id: number;
+  title: string;
+  description: string;
+  examples: string[];
+};
 export const rules: Rule[] = [
   {
     id: 1,
