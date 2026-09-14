@@ -36,6 +36,7 @@ export default function LetterCard({ letter }: LetterCardProps) {
               src={letter.image}
               alt={letter.word ?? letter.upper}
               fill
+              sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1280px) 25vw, 20vw"
               className="object-contain p-6 opacity-30 transition duration-300 group-hover:opacity-40"
             />
           </div>
