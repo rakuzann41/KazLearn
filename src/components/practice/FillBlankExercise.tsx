@@ -35,7 +35,7 @@ export default function FillBlankExercise({ exercise }: Props) {
               : "border-stone-400"
           }`}
         >
-          {selected || "_____"}
+          {selected || ""}
         </span>{" "}
         {exercise.sentenceAfter}
       </div>

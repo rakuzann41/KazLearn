@@ -42,7 +42,7 @@ export default function MatchingQuestion({
               <select
                 value={selected}
                 onChange={(e) => onChange(pair.left, e.target.value)}
-                className={`rounded-xl border px-4 py-3 outline-none ${
+                className={`rounded-xl  text-stone-800 border px-4 py-3 outline-none ${
                   isCorrect
                     ? "border-green-600/40 bg-green-100/70"
                     : isWrong
