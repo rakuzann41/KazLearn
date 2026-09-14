@@ -1,7 +1,7 @@
 import ReadingExercise from "@/components/practice/ReadingExercise";
 import { readingExercises } from "@/data/exercises";
 import { notFound } from "next/navigation";
-import BackButton from "@/components/BackButtonPractice";
+import BackButton from "@/components/Buttons/BackButtonPractice";
 
 type Props = {
   params: Promise<{

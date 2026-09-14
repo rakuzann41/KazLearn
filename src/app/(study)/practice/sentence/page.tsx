@@ -1,4 +1,4 @@
-import BackButton from "@/components/BackButtonPractice";
+import BackButton from "@/components/Buttons/BackButtonPractice";
 import SentenceBuilder from "@/components/practice/SentenceBuilder";
 import { sentenceExercises } from "@/data/sentences";
 

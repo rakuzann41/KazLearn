@@ -1,6 +1,6 @@
 import FillBlankExercise from "@/components/practice/FillBlankExercise";
 import { fillExercises } from "@/data/fillExercises";
-import BackButton from "@/components/BackButtonPractice";
+import BackButton from "@/components/Buttons/BackButtonPractice";
 
 export default function FillPracticePage() {
   return (
